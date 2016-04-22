@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>The Usual</title>
+        <!-- Foundation CDN -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/css/foundation.min.css">
+        <!-- Google Font CDN -->
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+
+        <!-- Log in template -->
+
+        <div id = "landing">
+
+            <a href="/" id = "logo">THE USUAL</a>
+            <h2 id = "tagline">Sharing Meals Made Easy.</h2>
+        <!-- div for all the links -->
+            <header id = "header"></header>
+
+        </div>
+
+        <div id = "container"></div>
+
+
+        <template id='log-in-screen'>
+
+            <div class='form-container'>
+
+                <div class="form small-10 medium-5 large-3">
+
+                    <div>
+                        <input type="text" id="email-field" placeholder="Email">
+                    </div>
+                    <div>
+                        <input type="password" id="password-field" placeholder="Password">
+                    </div>
+                    <button id="signin-submit">Sign In</button>
+
+                </div>
+
+            </div>
+
+        </template>
+
+
+        <!-- Sign Up Template -->
+        <template id='sign-up-screen'>
+
+            <div class='form-container'>
+
+                <div class="form small-10 medium-5 large-3">
+
+                    <div>
+                        <input type="text" id="email-field" placeholder="Email">
+                    </div>
+                     <div>
+                        <input type="text" id="username-field" placeholder="Name">
+                    </div>
+
+                    <div>
+                        <input type="password" id="password-field" placeholder="Password">
+                    </div>
+                    <div>
+                        <input type="password" id="password-confirm-field" placeholder="Confirm Password">
+                        </div>
+
+                    <button id="signup-submit">Sign Up</button>
+
+                </div>
+
+            </div>
+
+        </template>
+
+        <!-- Main screen display all users meals -->
+        <template id='main-screen'>
+
+            <div id = "orders-container" class = "row">
+
+                <div style="width: 15%; margin: 0 auto; text-align: center;">
+                Sort By:<br>
+                    <select id="filter">
+                        <option value="all" selected>All</option>
+                        <option value="favorites">Favorites</option>
+                    </select>
+                </div>
+
+                {{#each orders}}
+
+                    <div class="order-div small-12 medium-6 large-4 columns" data-id="{{_id}}">
+                        <h2 id='main-screen-rest-name'>{{restaurant_name}}</h2>
+                        <div class = "img-container">
+                            {{#if img_url}}
+                            <img src={{img_url}}>
+                            {{else}}
+                            <img src="img/order-placeholder.jpg">
+                            {{/if}}
+                        </div>
+                        <h3 id = "cuisine">{{cuisine}}</h3>
+                        <p id='main-screen-details'>{{details}}</p>
+
+                        <button class="share-button">Share</button>
+                        <h5 class = 'confirmation'>Successfully Shared!</h5>
+                        <br>
+                        <button class="edit-button">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="delete-button">Delete</button>
+                    </div>
+
+                {{/each}}
+                <div class = "order-div small-12 medium-6 large-4 columns">
+                <button id="create-new-order">Create New Order</button>
+                </div>
+            </div>
+
+        </template>
+        <!-- Main screen display all users fav meals -->
+        <template id='fav-screen'>
+
+            <div id = "orders-container" class = "row">
+
+                <div style="width: 15%; margin: 0 auto; text-align: center;">
+                Sort By:<br>
+                    <select id="filter">
+                        <option value="all" selected>All</option>
+                        <option value="favorites" selected>Favorites</option>
+                    </select>
+                </div>
+
+                {{#each this}}
+
+                    <div class="order-div small-12 medium-6 large-4 columns" data-id="{{_id}}">
+                        <h2 id='main-screen-rest-name'>{{restaurant_name}}</h2>
+                        <div class = "img-container">
+                            {{#if img_url}}
+                            <img src={{img_url}}>
+                            {{else}}
+                            <img src="img/order-placeholder.jpg">
+                            {{/if}}
+                        </div>
+                        <h3 id = "cuisine">{{cuisine}}</h3>
+                        <p id='main-screen-details'>{{details}}</p>
+                        <button class="share-button">Share</button>
+                        <h5 class = 'confirmation'>Successfully Shared!</h5>
+                        <br>
+                        <button class="edit-button">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="delete-button">Delete</button>
+                    </div>
+
+                {{/each}}
+                <div class = "order-div small-12 medium-6 large-4 columns">
+                <button id="create-new-order">Create New Order</button>
+                </div>
+            </div>
+
+        </template>
+
+
+
+        <!-- New Order Template -->
+        <template id='new-order-template'>
+            <div class="form small-10 medium-5 large-3">
+                <h2 id = "new-order">Add A New Order</h2>
+                <div>
+                    <input type="text" id="rest-name" placeholder="Restaurant Name">
+                </div>
+                <div>
+                    <input type="text" id="order-details" placeholder="Order Details">
+                </div>
+                <div>
+                    <select id="cuisine-type">
+                        <option selected value="not specified">Cuisine</option>
+                        <option value="american">American</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="healthy">Healthy</option>
+                        <option value="italian">Italian</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="korean">Korean</option>
+                        <option value="mediterranean">Mediterranean</option>
+                        <option value="mexican">Mexican</option>
+                        <option value="thai">Thai</option>
+                        <option value="unhealthy">Unhealthy</option>
+                        <option value="vegetarian">Vegetarian</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="text" id="order-image" placeholder="Order Image URL">
+                </div>
+                <div>Favorite?
+                    <input type="checkbox" id="meal-favorite">
+                </div>
+
+                <button id="new-order-submit">Add Order</button>
+
+                <button id="new-order-back-button">Back</button>
+
+            </div>
+
+        </template>
+
+        <!-- Share template -->
+        <template id="share-template">
+
+            <div class="form share-form">
+                <br>
+                <input type="text" id="share-text" placeholder="Phone Number">
+                <a id = "share-text-submit">Share via Text</a>
+
+                <input type="text" id="share-email" placeholder="Email">
+                <a id = "share-email-submit">Share via Email</a>
+
+                <br>
+                <button id="share-cancel">Cancel</button>
+            </div>
+
+        </template>
+
+        <!-- Edit Order Template -->
+        <template id='edit-order-template'>
+
+            <div class="form small-10 medium-5 large-3">
+
+                <h2 id = "edit-order">Edit Your Order</h2>
+                <div>
+                    <input type="text" id="rest-name" placeholder="Restaurant Name" value="{{restaurant_name}}">
+                </div>
+                <div>
+                    <input type="text" id="order-details" placeholder="Order Details" value="{{details}}">
+                </div>
+                <div>
+                    <select id="cuisine-type">
+                        <option value="not specified">Cuisine</option>
+                        <option class = "option" value="american">American</option>
+                        <option class = "option" value="chinese">Chinese</option>
+                        <option class = "option" value="healthy">Healthy</option>
+                        <option class = "option" value="italian">Italian</option>
+                        <option class = "option" value="japanese">Japanese</option>
+                        <option class = "option" value="korean">Korean</option>
+                        <option class = "option" value="mediterranean">Mediterranean</option>
+                        <option class = "option" value="mexican">Mexican</option>
+                        <option class = "option" value="thai">Thai</option>
+                        <option class = "option" value="unhealthy">Unhealthy</option>
+                        <option class = "option" value="vegetarian">Vegetarian</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="text" id="order-image" placeholder="Order Image URL" value="{{img_url}}">
+                </div>
+                <div>Favorite?
+                    <input type="checkbox" id="meal-favorite">
+                </div>
+
+                <button id="edit-order-submit">Save Order</button>
+
+                <button id="edit-order-back-button">Back</button>
+
+            </div>
+
+        </template>
+
+
+
+
+        <!-- Load all scripts after everything else in the body is loaded -->
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.0.1/js/foundation.min.js"></script>
+        <script src="app.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,202 @@
+body {
+   -webkit-font-smoothing: antialiased;
+   font-family: 'Montserrat', Futura, Helvetica, sans-serif;
+}
+
+html, h1, h2, h3, h4, h5, p, a {
+    font-family: 'Montserrat', Futura, Helvetica, sans-serif;
+}
+
+#logo:hover {
+    transition: all .3s ease;
+    color: #fff;
+    opacity: .75;
+}
+
+#signin, #signup{
+    background-color: #D7C32E;
+    font-size: 1.25em;
+    color: #fff;
+    text-align: center;
+    padding: 20px 30px;
+    margin: 0 15px;
+    font-weight: 700;
+    transition: all .3s ease;
+    width: 100%;
+    border-radius: 3px;
+}
+
+#signout {
+    font-size: 1em;
+    color: #fff;
+    transition: all .3s ease;
+}
+
+ #signup-submit, #signin-submit, #new-order-submit {
+    background-color: #D7C32E;
+    font-size: 1.25em;
+    color: #fff;
+    text-align: center;
+    padding: 20px 30px;
+    font-weight: 700;
+    transition: all .3s ease;
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 15vh;
+ }
+
+#create-new-order {
+    background-color: #D7C32E;
+    font-size: 1.25em;
+    color: #fff;
+    text-align: center;
+    padding: 20px 30px;
+    font-weight: 700;
+    transition: all .3s ease;
+    border-radius: 3px;
+    margin-bottom: 15vh;
+}
+
+#signout:hover {
+    opacity: .75;
+}
+#signin:hover, #signup:hover, #signup-submit:hover, #signin-submit:hover, #new-order-submit:hover, #create-new-order:hover, .share-button:hover, #share-email-submit:hover, #share-text-submit:hover, #edit-order-submit:hover {
+    background-color: #619DD7;
+}
+
+.form-container {
+    width: 100%;
+}
+
+.form {
+    z-index: 10;
+    margin: 0 auto;
+}
+
+input[type=text], input[type=password], select {
+    height: 3.5em;
+    color: #333;
+    box-shadow: none;
+    transition: none;
+    padding: 0 20px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    transition: none;
+    border: 1px solid #333;
+    outline: 0;
+    box-shadow: none;
+}
+
+select {
+    transition: none;
+    outline: 0;
+    box-shadow: none;
+    background-color: #fff;
+}
+
+button:focus, select:focus {
+    outline: 0;
+}
+
+.img-container {
+    width: 175px;
+    height: 175px;
+    margin: 15px auto;
+}
+
+img {
+    border-radius: 50%;
+    width: 100%;
+    height:100%;
+}
+
+#orders-container {
+    margin: 30px auto;
+}
+
+.row {
+    max-width: 80rem;
+}
+
+.order-div {
+    text-align: center;
+    margin: 45px 0;
+}
+
+#main-screen-rest-name {
+    font-size: 2.25em;
+}
+.edit-button, .delete-button, #share-cancel {
+    transition: all .3s ease;
+    border-bottom: 2px solid #333;
+    padding-bottom: 1px;
+}
+
+.edit-button:hover, .delete-button:hover, #share-cancel:hover {
+    opacity: .75;
+}
+
+ .share-button {
+    background-color: #D7C32E;
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 700;
+    transition: all .3s ease;
+    width: 30%;
+    border-radius: 3px;
+    margin-bottom: 20px;
+ }
+
+ .meal-details {
+    font-size: .9em;
+ }
+
+ #main-screen-details {
+    font-size: 1.1em;
+    padding: 5px 40px;
+    line-height: 1.4;
+    font-style: italic;
+ }
+
+ #new-order, #edit-order {
+    font-size: 2.25em;
+    padding: 75px 0 20px 0;
+    margin-bottom: 0;
+    text-align: center;
+ }
+
+ .share-form {
+    width: 80%;
+    margin: 15px auto;
+ }
+
+  #share-email-submit, #share-text-submit, #edit-order-submit {
+    background-color: #D7C32E;
+    height: 3.5em;
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 700;
+    transition: all .3s ease;
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    display: inline-block;
+ }
+
+ #cuisine {
+    padding-top: 10px;
+    text-transform: capitalize;
+    font-size: 1em;
+    font-weight: 700;
+    font-style: italic;
+ }
+
+ .confirmation {
+    padding-top: 20px;
+    color: #64AF3C;
+ }
